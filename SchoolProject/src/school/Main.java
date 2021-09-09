@@ -36,8 +36,5 @@ public class Main {
         } while(age < 4 || age > 17);
 
         System.out.println("Student Name: " + name + " and age: " + age);
-
-
-
     }
 }
