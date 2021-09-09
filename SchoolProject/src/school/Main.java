@@ -36,5 +36,19 @@ public class Main {
         } while(age < 4 || age > 17);
 
         System.out.println("Student Name: " + name + " and age: " + age);
+
+        GradeType grade = null;
+        try {
+            grade = UtilityClass.determineGradeBasedOnAge(age);
+        } catch (AgeNotCorrectException e) {
+            System.out.println("Age has to be between 4 and 17");
+        }
+
+        SchoolType school = null;
+        try {
+            school = UtilityClass.determineSchoolBasedOnGrades(grade);
+        } catch (GradeNotCorrectException e) {
+            System.out.println("School not available");
+        }
     }
 }
