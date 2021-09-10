@@ -3,6 +3,26 @@ package school;
 public class MiddleSchool extends AbstractSchool{
     @Override
     public Double chargeFees(Student student) {
-        return null;
+        double fees = 0;
+        double fees6 = 100 * 1.75;
+        double fees7 = fees6 + (fees6 * 0.35);
+        double fees8 = fees7 + (fees7 * 0.35);
+
+        if(student.getGrade() == GradeType.SIXTH_GRADE){
+            fees =  fees6;
+            System.out.println("Fees for First Grade is " + fees);
+        }
+        else if(student.getGrade() == GradeType.SEVENTH_GRADE){
+            fees = fees7;
+            System.out.println("Fees for Second Grade is " + fees);
+        }
+        else if(student.getGrade() == GradeType.EIGHTTH_GRADE){
+            fees = fees8;
+            System.out.println("Fees for Third Grade is " + fees);
+        }
+        else {
+            System.out.println("Fees not available for Middle school");
+        }
+        return fees;
     }
 }
