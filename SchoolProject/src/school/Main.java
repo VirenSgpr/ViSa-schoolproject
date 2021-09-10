@@ -35,7 +35,11 @@ public class Main {
             }
         } while(age < 4 || age > 17);
 
+        System.out.println("********************");
+
         System.out.println("Student Name: " + name + " and age: " + age);
+
+        System.out.println("********************");
 
         GradeType grade = null;
         try {
@@ -44,12 +48,16 @@ public class Main {
             System.out.println("Age has to be between 4 and 17");
         }
 
+        System.out.println("********************");
+
         SchoolType schoolType = null;
         try {
             schoolType = UtilityClass.determineSchoolBasedOnGrades(grade);
         } catch (GradeNotCorrectException e) {
             System.out.println("School not available");
         }
+
+        System.out.println("********************");
 
         Student student = new Student(name, age, grade);
         School school = UtilityClass.retrieveSchoolObjectBasedOnSchoolType(schoolType);
@@ -60,5 +68,6 @@ public class Main {
             System.out.println("Sorry class for the grade" + grade + " is full, try another student");
         }
 
+        System.out.println("Welcome to School " + student.getName() + ", you are admitted in class " + student.getGrade());
     }
 }
