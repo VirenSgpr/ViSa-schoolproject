@@ -10,15 +10,15 @@ public class MiddleSchool extends AbstractSchool{
 
         if(student.getGrade() == GradeType.SIXTH_GRADE){
             fees =  fees6;
-            System.out.println("Fees for First Grade is " + fees);
+            System.out.println("Fees for Sixth Grade is " + fees);
         }
         else if(student.getGrade() == GradeType.SEVENTH_GRADE){
             fees = fees7;
-            System.out.println("Fees for Second Grade is " + fees);
+            System.out.println("Fees for Seventh Grade is " + fees);
         }
         else if(student.getGrade() == GradeType.EIGHTTH_GRADE){
             fees = fees8;
-            System.out.println("Fees for Third Grade is " + fees);
+            System.out.println("Fees for Eighth Grade is " + fees);
         }
         else {
             System.out.println("Fees not available for Middle school");
