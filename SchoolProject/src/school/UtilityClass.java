@@ -3,6 +3,11 @@ package school;
 
 public class UtilityClass {
 
+    private static School Preschool = new Preschool();
+    private static School ElementarySchool = new ElementarySchool();
+    private static School MiddleSchool = new MiddleSchool();
+    private static School HighSchool = new HighSchool();
+
     public static GradeType determineGradeBasedOnAge(int age) throws AgeNotCorrectException{
         System.out.println("Determining grade done");
         switch (age){
@@ -80,6 +85,21 @@ public class UtilityClass {
                 return SchoolType.HIGH_SCHOOL;
             default:
                 throw new GradeNotCorrectException("School is not available");
+        }
+    }
+
+    public static School retrieveSchoolObjectBasedOnSchoolType(SchoolType schoolType){
+        switch ((schoolType)){
+            case PRE_SCHOOL:
+                return Preschool;
+            case ELEMENTARY_SCHOOL:
+                return ElementarySchool;
+            case MIDDLE_SCHOOL:
+                return MiddleSchool;
+            case HIGH_SCHOOL:
+                return HighSchool;
+            default:
+                throw new IllegalArgumentException("Wrong School type");
         }
     }
 }

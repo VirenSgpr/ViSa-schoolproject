@@ -6,7 +6,7 @@ import static java.lang.System.exit;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IllegalAccessException, ClassFullException {
         //Initial Details of Project
         Scanner scanner = new Scanner(System.in);
         System.out.println("**************************************");
@@ -44,11 +44,20 @@ public class Main {
             System.out.println("Age has to be between 4 and 17");
         }
 
-        SchoolType school = null;
+        SchoolType schoolType = null;
         try {
-            school = UtilityClass.determineSchoolBasedOnGrades(grade);
+            schoolType = UtilityClass.determineSchoolBasedOnGrades(grade);
         } catch (GradeNotCorrectException e) {
             System.out.println("School not available");
         }
+
+        Student student = new Student(name, age, grade);
+        School school = UtilityClass.retrieveSchoolObjectBasedOnSchoolType(schoolType);
+        try {
+            school.admitStudent(name, age, grade);
+        } catch (ClassFullException e) {
+            System.out.println("Sorry class for the grade" + grade + " is full, try another student");
+        }
+
     }
 }
