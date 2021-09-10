@@ -54,7 +54,8 @@ public class Main {
         Student student = new Student(name, age, grade);
         School school = UtilityClass.retrieveSchoolObjectBasedOnSchoolType(schoolType);
         try {
-            school.admitStudent(name, age, grade);
+            school.admitStudent(student);
+            school.chargeFees(student);
         } catch (ClassFullException e) {
             System.out.println("Sorry class for the grade" + grade + " is full, try another student");
         }
