@@ -8,12 +8,13 @@ public class Main {
 
     public static void main(String[] args) throws IllegalAccessException, ClassFullException {
         //Initial Details of Project
-        Scanner scanner = new Scanner(System.in);
+        String name;
+        do {
         System.out.println("**************************************");
         System.out.println("Welcome to the School Admissions App !!!   Press X for exit");
         System.out.println("**************************************");
-
-        String name;
+        Scanner scanner = new Scanner(System.in);
+        //Name entering loop
         do{
             System.out.println("Enter the name of the student:  (no less than 3 chars and no more than 50 chars)");
             name = scanner.nextLine();
@@ -25,7 +26,7 @@ public class Main {
                 System.out.println("Please enter valid name for school");
             }
         } while(name.length() < 3 || name.length() > 50);
-
+        //Age entering loop
         int age;
         do {
             System.out.println("Enter the age of the student: ");
@@ -40,7 +41,7 @@ public class Main {
         System.out.println("Student Name: " + name + " and age: " + age);
 
         System.out.println("********************");
-
+        //defining grade type and storing value of determinegrade into grade
         GradeType grade = null;
         try {
             grade = UtilityClass.determineGradeBasedOnAge(age);
@@ -49,7 +50,7 @@ public class Main {
         }
 
         System.out.println("********************");
-
+        //defining school type and storing value of determineschool into schooltype
         SchoolType schoolType = null;
         try {
             schoolType = UtilityClass.determineSchoolBasedOnGrades(grade);
@@ -58,16 +59,16 @@ public class Main {
         }
 
         System.out.println("********************");
-
+        //defining student object of student and storing schooltype into school
+        //calling chargefees function
         Student student = new Student(name, age, grade);
         School school = UtilityClass.retrieveSchoolObjectBasedOnSchoolType(schoolType);
         try {
             school.admitStudent(student);
             school.chargeFees(student);
         } catch (ClassFullException e) {
-            System.out.println("Sorry class for the grade" + grade + " is full, try another student");
+            System.out.println("Sorry class for the grade " + grade + " is full, try another student");
         }
-
-        System.out.println("Welcome to School " + student.getName() + ", you are admitted in class " + student.getGrade());
+        }while (!name.equals("X") || !name.equals("x"));
     }
 }
