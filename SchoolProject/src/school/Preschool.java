@@ -5,7 +5,7 @@ public class Preschool extends AbstractSchool{
     public Double chargeFees(Student student) {
         double fees = 100 * 1.1;
         if(student.getGrade() == GradeType.JK_GRADE){
-            fees =  fees;
+            fees =  Math.round(fees);
             System.out.println("Fees for JK is " + fees);
         }
         else if(student.getGrade() == GradeType.SK_GRADE){
