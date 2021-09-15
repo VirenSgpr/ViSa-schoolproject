@@ -16,18 +16,22 @@ public class ElementarySchool extends AbstractSchool{
         }
         else if(student.getGrade() == GradeType.SECOND_GRADE){
             fees = fees2;
+            fees =  Math.round(fees);
             System.out.println("Fees for Second Grade is " + fees);
         }
         else if(student.getGrade() == GradeType.THIRD_GRADE){
             fees = fees3;
+            fees =  Math.round(fees);
             System.out.println("Fees for Third Grade is " + fees);
         }
         else if(student.getGrade() == GradeType.FOURTH_GRADE){
             fees = fees4;
+            fees =  Math.round(fees);
             System.out.println("Fees for Fourth Grade is " + fees);
         }
         else if(student.getGrade() == GradeType.FIFTH_GRADE){
             fees = fees5;
+            fees =  Math.round(fees);
             System.out.println("Fees for Fifth Grade is " + fees);
         }
         else {

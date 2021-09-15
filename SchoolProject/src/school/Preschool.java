@@ -10,6 +10,7 @@ public class Preschool extends AbstractSchool{
         }
         else if(student.getGrade() == GradeType.SK_GRADE){
             fees = fees + (fees * 0.25);
+            fees =  Math.round(fees);
             System.out.println("Fees for SK is " + fees);
         }
         else {

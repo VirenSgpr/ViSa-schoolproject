@@ -11,18 +11,22 @@ public class HighSchool extends AbstractSchool{
 
         if(student.getGrade() == GradeType.NINTH_GRADE){
             fees =  fees9;
+            fees =  Math.round(fees);
             System.out.println("Fees for Ninth Grade is " + fees);
         }
         else if(student.getGrade() == GradeType.TENTH_GRADE){
             fees = fees10;
+            fees =  Math.round(fees);
             System.out.println("Fees for Tenth Grade is " + fees);
         }
         else if(student.getGrade() == GradeType.ELEVENTH_GRADE){
             fees = fees11;
+            fees =  Math.round(fees);
             System.out.println("Fees for Eleventh Grade is " + fees);
         }
         else if(student.getGrade() == GradeType.TWELVETH_GRADE){
             fees = fees12;
+            fees =  Math.round(fees);
             System.out.println("Fees for Twelfth Grade is " + fees);
         }
         else {
